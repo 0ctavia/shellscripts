@@ -1,0 +1,14 @@
+#!/bin/bash
+
+mkdir assets
+cd assets
+mkdir img
+mkdir scss
+mkdir css
+cd scss
+touch style.scss
+cd ..
+cd css
+touch style.css
+echo 'directories created'
+

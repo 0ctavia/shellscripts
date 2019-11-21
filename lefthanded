@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# defining no-color variable
+NC='\033[0m'
+
+# script for switching mouse to left handed mode
+xinput list
+tput setaf 3; echo -e "Type the number of the device you want to switch to left or righthanded mode (number after 'id').${NC}"
+read devicenumber
+
+xinput list-props $devicenumber
+tput setaf 3; echo -e "Type the option number (the number between brackets, usually 315) for the lefthanded mode.${NC}"
+read option
+tput setaf 3; echo -e "Set desired mode, 0 to disable lefthanded mode, or 1 to enable it.${NC}"
+read mode
+
+xinput set-prop $devicenumber $option $mode
+
+if [ $mode = 1 ];
+then
+    tput setaf 5; echo "Device set to left-handed mode"
+elif [ $mode = 0 ];
+then
+    tput setaf 5; echo "Device set to right-handed mode"
+else
+    tput setaf 1; echo "Error"
+fi
