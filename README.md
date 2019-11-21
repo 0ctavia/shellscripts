@@ -1,11 +1,11 @@
 # Bash Scripts
 
 Repository for small bash scripting projects.
-So far, they are meant for bash. Getting them posix-compliant will be done later.
 
 ## Initialise
 
 First bash script. This script, when executed, will create a specific file structure often used in our projects throughout the BeCode training.
+This script is POSIX compliant.
 
 ## Lefthanded
 

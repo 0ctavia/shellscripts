@@ -1,14 +1,23 @@
-#!/bin/bash
+#!/bin/sh
 
+# make the user confirm
+echo "This script will create a number of directories starting from where you are. Continue? [y/n]"
+read response
+
+if [ $response = "n" ] || [ $response = "N" ] ; 
+then exit
+fi
+
+# create directories
 mkdir assets
-cd assets
+cd assets || exit
 mkdir img
 mkdir scss
 mkdir css
-cd scss
+cd scss || exit
 touch style.scss
 cd ..
-cd css
+cd css || exit
 touch style.css
 echo 'directories created'
 
