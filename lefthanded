@@ -10,7 +10,7 @@ read devicenumber
 
 # selecting the option from the device that will enable or disable lefthanded mode
 xinput list-props $devicenumber
-tput setaf 3; echo -e "Type the option number for switching to lefthanded mode, which is usually 315 (this is not the default) ${NC}"
+tput setaf 3; echo -e "Type the option number for setting to lefthanded mode (not the default setting mode) ${NC}"
 read option
 
 # making user chose to enable or disable lefthanded mode
