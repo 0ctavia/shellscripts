@@ -19,12 +19,6 @@ if [ -d "${PWD}/src/components" ]
             if [ $response = "n" ] || [ $response = "N" ] ; 
             then exit
             fi
-        mkdir ${PWD}/src/components/$1
-        echo "import React from 'react';" > ${PWD}/src/components/$1/$1.js
-        echo "const $name = props => ();" >> ${PWD}/src/components/$1/$1.js
-        echo "export default $name" >> ${PWD}/src/components/$1/$1.js
-        touch ${PWD}/src/components/$1/$1.module.css
-        echo "Created files"
 
     else
         echo "Components directory not found. Create directory + react component $1 files? [y/n] "
@@ -34,12 +28,12 @@ if [ -d "${PWD}/src/components" ]
             then exit
             fi
         mkdir ${PWD}/src/components
-        mkdir ${PWD}/src/components/$1
-        echo "import React from 'react';" > ${PWD}/src/components/$1/$1.js
-        echo "const $name = props => ();" >> ${PWD}/src/components/$1/$1.js
-        echo "export default $name" >> ${PWD}/src/components/$1/$1.js
-        touch ${PWD}/src/components/$1/$1.module.css
-        echo "Created directories and files!"
 fi
 
+mkdir ${PWD}/src/components/$1
+echo "import React from 'react';" > ${PWD}/src/components/$1/$1.js
+echo "const $name = props => ();" >> ${PWD}/src/components/$1/$1.js
+echo "export default $name" >> ${PWD}/src/components/$1/$1.js
+touch ${PWD}/src/components/$1/$1.module.css
 
+echo "Created directories and files!"
