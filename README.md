@@ -16,6 +16,7 @@ This script will prompt the user to enable or disable the lefthanded mode on a u
 ## Reactcomponent
 
 Small script created for and with co-students to initialise React Components.
+Many thanks to [Matis](https://github.com/MKaramen) and [Julien](https://github.com/ggbjulien).
 
 ## Installing the scripts
 
