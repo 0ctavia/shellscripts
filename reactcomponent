@@ -1,0 +1,45 @@
+#!/bin/sh
+
+PWD=$(pwd)
+# check if the user is indeed at root of react project
+name=$1
+
+if [ -d "${PWD}/src" ] 
+    then echo "src exists. Files will be created with name $1."
+        
+    else echo "/src does not exist, check that you are in the right directory. Exiting now." 
+    exit  
+fi
+
+if [ -d "${PWD}/src/components" ]
+    then 
+        echo "This script will create files for react component $1. Continue [y/n]?"
+        read response
+
+            if [ $response = "n" ] || [ $response = "N" ] ; 
+            then exit
+            fi
+        mkdir ${PWD}/src/components/$1
+        echo "import React from 'react';" > ${PWD}/src/components/$1/$1.js
+        echo "const $name = props => ();" >> ${PWD}/src/components/$1/$1.js
+        echo "export default $name" >> ${PWD}/src/components/$1/$1.js
+        touch ${PWD}/src/components/$1/$1.module.css
+        echo "Created files"
+
+    else
+        echo "Components directory not found. Create directory + react component $1 files? [y/n] "
+        read response
+
+            if [ $response = "n" ] || [ $response = "N" ] ; 
+            then exit
+            fi
+        mkdir ${PWD}/src/components
+        mkdir ${PWD}/src/components/$1
+        echo "import React from 'react';" > ${PWD}/src/components/$1/$1.js
+        echo "const $name = props => ();" >> ${PWD}/src/components/$1/$1.js
+        echo "export default $name" >> ${PWD}/src/components/$1/$1.js
+        touch ${PWD}/src/components/$1/$1.module.css
+        echo "Created directories and files!"
+fi
+
+

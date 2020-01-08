@@ -13,10 +13,16 @@ This script is POSIX compliant.
 Second bash script. Having switched to non-GUI I wanted a quick script to modify certain input types (the mouse) to a left-handed mode while leaving others (such as the touchpad) in right-handed mode. 
 This script will prompt the user to enable or disable the lefthanded mode on a user-selected input device.
 
+## Reactcomponent
+
+Small script created for and with co-students to initialise React Components.
+
 ## Installing the scripts
 
 These scripts can either be placed in a directory specified in your PATH or can be symlinked. 
 As a personal preference, I symlink to /usr/local/bin .
+
+Do not forget to make it executable. 
 
 *Note: create a symlink*
 
