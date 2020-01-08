@@ -4,36 +4,75 @@ PWD=$(pwd)
 # check if the user is indeed at root of react project
 name=$1
 
+<<<<<<< HEAD
+# defining no-color variable
+NC="\033[0m"
+
 if [ -d "${PWD}/src" ] 
-    then echo "src exists. Files will be created with name $1."
+    then 
+        while [[ $name == "" ]]
+        do 
+            echo "Choose a name for your component : "
+            read name
+        done 
+    tput setaf 2; echo -e "Component will be created with name $name. ${NC}"
+=======
+while [[ $name == "" ]]
+do 
+    echo "Choose a name for your component :"
+    read name
+done 
+
+if [ -d "${PWD}/src" ] 
+    then echo "src exists. Files will be created with name $name."
+>>>>>>> 0261ffe9f06fe7f319dc72a97ff117dc8a1840cc
         
-    else echo "/src does not exist, check that you are in the right directory. Exiting now." 
+    else 
+        tput setaf 1; printf "/src does not exist, check that you are in the right directory. \nExiting now. ${NC}\n" 
     exit  
 fi
 
+while [[ $name == "" ]]
+do 
+    echo "Choose a name for your component : "
+    read name
+done 
+
 if [ -d "${PWD}/src/components" ]
     then 
-        echo "This script will create files for react component $1. Continue [y/n]?"
+        echo "This script will create files for react component $name. Continue [y/n]?"
         read response
-
             if [ $response = "n" ] || [ $response = "N" ] ; 
-            then exit
+            then 
+                tput setaf 1; echo -e "Exiting now ${NC}"
+            exit
             fi
-
     else
-        echo "Components directory not found. Create directory + react component $1 files? [y/n] "
+<<<<<<< HEAD
+        echo "Components directory not found. Create directory + react component $name ? [y/n]"
+=======
+        echo "Components directory not found. Create directory + react component $name files? [y/n] "
+>>>>>>> 0261ffe9f06fe7f319dc72a97ff117dc8a1840cc
         read response
-
             if [ $response = "n" ] || [ $response = "N" ] ; 
-            then exit
+            then 
+                tput setaf 1; echo -e "Exiting now ${NC}"
+
+            exit
             fi
         mkdir ${PWD}/src/components
+<<<<<<< HEAD
+        tput setaf 2; echo -e "/components folder created ${NC}"
+=======
+>>>>>>> 0261ffe9f06fe7f319dc72a97ff117dc8a1840cc
+        
 fi
 
-mkdir ${PWD}/src/components/$1
-echo "import React from 'react';" > ${PWD}/src/components/$1/$1.js
-echo "const $name = props => ();" >> ${PWD}/src/components/$1/$1.js
-echo "export default $name" >> ${PWD}/src/components/$1/$1.js
-touch ${PWD}/src/components/$1/$1.module.css
-
-echo "Created directories and files!"
+mkdir ${PWD}/src/components/$name
+        printf "import React from 'react';\nimport styles from './$name.module.css';\n\nconst $name = props => ();\n\nexport default $name"  > ${PWD}/src/components/$name/$name.js
+        touch ${PWD}/src/components/$name/$name.module.css
+<<<<<<< HEAD
+        tput setaf 2;echo -e "Created directories and files! ${NC}"
+=======
+        echo "Created directories and files!"
+>>>>>>> 0261ffe9f06fe7f319dc72a97ff117dc8a1840cc
