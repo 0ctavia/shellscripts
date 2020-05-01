@@ -4,7 +4,6 @@ PWD=$(pwd)
 # check if the user is indeed at root of react project
 name=$1
 
-<<<<<<< HEAD
 # defining no-color variable
 NC="\033[0m"
 
@@ -16,7 +15,6 @@ if [ -d "${PWD}/src" ]
             read name
         done 
     tput setaf 2; echo -e "Component will be created with name $name. ${NC}"
-=======
 while [[ $name == "" ]]
 do 
     echo "Choose a name for your component :"
@@ -25,8 +23,6 @@ done
 
 if [ -d "${PWD}/src" ] 
     then echo "src exists. Files will be created with name $name."
->>>>>>> 0261ffe9f06fe7f319dc72a97ff117dc8a1840cc
-        
     else 
         tput setaf 1; printf "/src does not exist, check that you are in the right directory. \nExiting now. ${NC}\n" 
     exit  
